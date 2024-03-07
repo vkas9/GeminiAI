@@ -1,5 +1,44 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
+import runChat from "../config/gemini";
 
- const geminiContext=createContext();
+export const geminiContext = createContext();
 
- export default geminiContext;
+const GeminiProvider = ({ children }) => {
+  const [input, setInput] = useState("");
+  const [loader, SetLoader] = useState(false);
+  const [prevPrompt, setPrevPrompt] = useState([]);
+  const [recentPrompt, setRecentPrompt] = useState("");
+  const [showResult, setShowResult] = useState(false);
+  const [resultData, setResultData] = useState("");
+  const onSet = async (input) => {
+    setResultData("")
+    SetLoader(true);
+    setShowResult(true);
+    const response=await runChat(input);
+    console.log("response->",response);
+    setResultData(response);
+    SetLoader(false);
+    
+
+  };
+ 
+  
+  const Context = {
+    input,
+    setInput,
+    onSet,
+    prevPrompt,
+    setPrevPrompt,
+    recentPrompt,
+    setRecentPrompt,
+    showResult,
+    loader,
+    resultData,
+  };
+
+  return (
+    <geminiContext.Provider value={Context}>{children}</geminiContext.Provider>
+  );
+};
+
+export default GeminiProvider;
