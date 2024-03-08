@@ -11,18 +11,29 @@ const GeminiProvider = ({ children }) => {
   const [showResult, setShowResult] = useState(false);
   const [resultData, setResultData] = useState("");
   const onSet = async (input) => {
-    setResultData("")
+    setResultData("");
     SetLoader(true);
     setShowResult(true);
-    const response=await runChat(input);
-    console.log("response->",response);
+    setRecentPrompt(input);
+
+    console.log("dskjd");
+    const response = await runChat(input);
+
     setResultData(response);
     SetLoader(false);
-    
-
+    setInput("");
+    console.log("dskjd");
+    setPrevPrompt((prevPrompt) => {
+      if (prevPrompt.includes(input)) {
+        return [...prevPrompt];
+      }
+      else{
+        return [...prevPrompt,input]
+      }
+      
+    });
   };
- 
-  
+
   const Context = {
     input,
     setInput,

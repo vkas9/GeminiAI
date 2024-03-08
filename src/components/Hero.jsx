@@ -71,22 +71,23 @@ const Hero = () => {
           <div className="max-w-[950px] flex flex-col gap-4">
             <div className="flex items-center gap-4">
               <div
-                className={`rounded-full bg-gradient-to-br from-red-500 to-blue-500 hover:cursor-pointer h-[40px] text-white w-[40px]`}
+                className={`rounded-full bg-gradient-to-tr from-red-500 via-purple-600 to-blue-500 hover:cursor-pointer h-[40px] text-white w-[40px]`}
               ></div>
-              <h1 className="text-xl">{input}</h1>
+              <h1 className="text-xl">{recentPrompt}</h1>
               <MdEdit
-                size={40}
-                className=" p-2 bg-gray-800 rounded-full opacity-0 hover:opacity-100 transition-opacity duration-300  hover:cursor-pointer "
+                size={35}
+                className=" p-2 bg-gray-600 rounded-full opacity-0 hover:opacity-100 transition-all duration-300  hover:cursor-pointer "
               />
             </div>
             <div className="flex ">
-            <SiGooglebard size={20} color="pink"  className="min-w-[5%] "/>
-            <div>{resultData}</div>
+              <SiGooglebard size={20} color="pink" className="min-w-[5%] " />
+              {loader?<div className="w-[100%] h-[250px] ">{<div className="spinner "/>}</div>:<div>{resultData}</div>}
+              
             </div>
           </div>
         </div>
       )}
-      <div className=" w-[100%] absolute bottom-0 h-[100px] ">
+      <div className=" w-[100%] absolute bottom-0 flex items-center h-[100px] ">
         <input
           type="text"
           onKeyDown={(e) => {
@@ -98,6 +99,7 @@ const Hero = () => {
           className="outline-none text-xl bg-[#18191A] w-[100%]   h-[70px] pl-6 rounded-full "
           placeholder="Enter a prompt here"
         />
+       
       </div>
     </div>
   );
