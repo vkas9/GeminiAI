@@ -19,7 +19,7 @@ const Sidebar = () => {
     //animate={{width:"200px"}}
     <motion.div
       animate={{ width: isOpen ? "250px" : "55px" }}
-      className="h-[100vh] flex flex-col  py-3 pb-9  bg-[#18191A] relative "
+      className="h-[100vh] hidden flex-col  py-3 pb-9  bg-[#18191A] relative "
     >
       <div className="mt-3 pl-2 flex flex-col gap-[60px] rounded-full   ">
         <VscListFlat
