@@ -21,7 +21,7 @@ const Hero = () => {
   } = useContext(geminiContext);
 
   return (
-    <div className="w-[100%] h-[100%] m-auto overflow-hidden relative flex flex-col justify-between text-white">
+    <div className="w-[100%] h-[100%] m-auto overflow-hidden relative flex  flex-col justify-between text-white">
       {!showResult ? (
         <div className=" h-[82%] mx-auto">
           <div>
@@ -34,33 +34,33 @@ const Hero = () => {
             </span>
           </div>
           <div className="grid grid-cols-4   overflow-auto gap-3 h-[200px]  mt-[80px]">
-            <div className="p-4 bg-gray-800 w-[200px]  relative rounded-md ">
+            <div className="p-4 bg-gray-500/30 w-[200px]  relative rounded-md ">
               <p>
                 Create a 12-week study plan for learning a new language: Italian
               </p>
               <BsPencilSquare
-                className=" absolute right-2 bottom-2 hover:cursor-pointer hover:bg-gray-700 rounded-md p-1 box-content"
+                className=" absolute right-2 bottom-2 hover:cursor-pointer hover:bg-gray-400/30 rounded-md p-1 box-content"
                 size={25}
               />
             </div>
-            <div className="p-4 bg-gray-800 w-[200px] relative rounded-md">
+            <div className="p-4 bg-gray-500/30 w-[200px] relative rounded-md">
               <p>Create a list of power phrases for my resume</p>
               <RiCompass3Line
-                className=" absolute right-2 bottom-2 hover:cursor-pointer hover:bg-gray-700 rounded-md p-1 box-content"
+                className=" absolute right-2 bottom-2 hover:cursor-pointer hover:bg-gray-400/30 rounded-md p-1 box-content"
                 size={30}
               />
             </div>
-            <div className="p-4 bg-gray-800 w-[200px] relative  rounded-md">
+            <div className="p-4 bg-gray-500/30 w-[200px] relative  rounded-md">
               <p>Give me ideas for what to do with what's in this image?</p>
               <MdOutlineAddPhotoAlternate
-                className=" absolute right-2 bottom-2 hover:cursor-pointer hover:bg-gray-700 rounded-md p-1 box-content"
+                className=" absolute right-2 bottom-2 hover:cursor-pointer hover:bg-gray-400/30 rounded-md p-1 box-content"
                 size={25}
               />
             </div>
-            <div className="p-4 bg-gray-800 w-[200px] relative  rounded-md">
+            <div className="p-4 bg-gray-500/30 w-[200px] relative  rounded-md">
               <p>Walk me through how to apply for a new role</p>
               <RiCompass3Line
-                className=" absolute right-2 bottom-2 hover:cursor-pointer hover:bg-gray-700 rounded-md p-1 box-content"
+                className=" absolute right-2 bottom-2 hover:cursor-pointer hover:bg-gray-400/30 rounded-md p-1 box-content"
                 size={30}
               />
             </div>

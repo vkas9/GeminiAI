@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-
+import runChat from "../config/gemini";
 
 export const geminiContext = createContext();
 
@@ -16,13 +16,13 @@ const GeminiProvider = ({ children }) => {
     setShowResult(true);
     setRecentPrompt(input);
 
-    
+    console.log("dskjd");
     const response = await runChat(input);
 
     setResultData(response);
     SetLoader(false);
     setInput("");
-   
+    console.log("dskjd");
     setPrevPrompt((prevPrompt) => {
       if (prevPrompt.includes(input)) {
         return [...prevPrompt];
